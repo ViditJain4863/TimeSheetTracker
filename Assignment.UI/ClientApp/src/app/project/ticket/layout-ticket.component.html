@@ -1,0 +1,15 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark px-3">
+    <div class="navbar-nav">
+        <a class="nav-item nav-link" routerLink="about" routerLinkActive="active">About</a>
+        <a class="nav-item nav-link" routerLink="weekly" routerLinkActive="active">Timesheet-Weekly</a>
+        <a class="nav-item nav-link" routerLink="monthly" routerLinkActive="active">Monthly-Status</a>
+        <a class="nav-link nav-link" routerLink="ticket" routerLinkActive="active">Add New Task</a>
+        <a class="nav-link nav-link" routerLink="timeline" routerLinkActive="active">TimeLine</a>
+    </div>
+</nav>
+<div class="p-4">
+    <div class="container">
+        <label id="empNameLbl">Employe Name :-</label> <input type="text" disabled="true" value={{user?.userName}}>
+        <router-outlet></router-outlet>
+    </div>
+</div>

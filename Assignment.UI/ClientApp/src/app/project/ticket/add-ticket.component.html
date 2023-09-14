@@ -1,0 +1,41 @@
+<h1>{{title}}</h1>
+<form *ngIf="!loading" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="row">
+        <div class="mb-3 col">
+            <label class="form-label">Ticket Title</label>
+            <input title="TicketTitle" type="text" formControlName="tickettitle" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.tickettitle.errors }" />
+            <div *ngIf="submitted && f.tickettitle.errors" class="invalid-feedback">
+                <div *ngIf="f.tickettitle.errors.required">Ticket Title is required</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="mb-3 col">
+            <label class="form-label">Ticket Start Date</label>
+            <input title="TicketStartDate" type="date" formControlName="ticketstartdate" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.ticketstartdate.errors }" />
+            <div *ngIf="submitted && f.ticketstartdate.errors" class="invalid-feedback">
+                <div *ngIf="f.ticketstartdate.errors.required">Ticket Start Date is required</div>
+            </div>
+        </div>
+        <div class="mb-3 col">
+            <label class="form-label">Ticket End Date</label>
+            <input title="TicketEndDate" type="date" formControlName="ticketenddate" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.ticketenddate.errors }" />
+            <div *ngIf="submitted && f.ticketenddate.errors" class="invalid-feedback">
+                <div *ngIf="f.ticketenddate.errors.required">Ticket End Date is required</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="mb-3">
+        <button type="submit" [disabled]="submitting" class="btn btn-primary">
+            <span *ngIf="submitting" class="spinner-border spinner-border-sm me-1"></span>
+            Save
+        </button>
+        <a routerLink="/project" class="btn btn-link">Cancel</a>
+    </div>
+
+</form>
+<div *ngIf="loading" class="text-center m-5">
+    <span class="spinner-border spinner-border-lg align-center"></span>
+</div>

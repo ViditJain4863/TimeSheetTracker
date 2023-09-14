@@ -1,0 +1,57 @@
+<h1>{{title}}</h1>
+<form *ngIf="!loading" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="row">
+        <div class="mb-3 col">
+            <label class="form-label">Project Code</label>
+            <input title="ProjectCode" type="text" formControlName="projectcode" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.projectcode.errors }" />
+            <div *ngIf="submitted && f.projectcode.errors" class="invalid-feedback">
+                <div *ngIf="f.projectcode.errors.required">Project Code is required</div>
+            </div>
+        </div>
+        <div class="mb-3 col">
+            <label class="form-label">Project Name</label>
+            <input title="ProjectName" type="text" formControlName="projectname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.projectname.errors }" />
+            <div *ngIf="submitted && f.projectname.errors" class="invalid-feedback">
+                <div *ngIf="f.projectname.errors.required">Project Name is required</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="mb-3 col">
+            <label class="form-label">Project Description</label>
+            <input title="ProjectDescription" type="text" formControlName="projectdescription" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.projectdescription.errors }" />
+            <div *ngIf="submitted && f.projectdescription.errors" class="invalid-feedback">
+                <div *ngIf="f.projectdescription.errors.required">Project Description is required</div>
+            </div>
+        </div>
+        <div class="mb-3 col">
+            <label class="form-label">Project Start</label>
+            <input title="ProjectStart" type="date" formControlName="projectstart" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.projectstart.errors }" />
+            <div *ngIf="submitted && f.projectstart.errors" class="invalid-feedback">
+                <div *ngIf="f.projectstart.errors.required">Project Start is required</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="mb-3 col">
+            <label class="form-label">Project End</label>
+            <input title="ProjectEnd" type="date" formControlName="projectend" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.projectend.errors }" />
+            <div *ngIf="submitted && f.projectend.errors" class="invalid-feedback">
+                <div *ngIf="f.projectend.errors.required">Project End is required</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="mb-3">
+        <button type="submit" [disabled]="submitting" class="btn btn-primary">
+            <span *ngIf="submitting" class="spinner-border spinner-border-sm me-1"></span>
+            Save
+        </button>
+        <a routerLink="/project" class="btn btn-link">Cancel</a>
+    </div>
+</form>
+<div *ngIf="loading" class="text-center m-5">
+    <span class="spinner-border spinner-border-lg align-center"></span>
+</div>

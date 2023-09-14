@@ -1,0 +1,17 @@
+<div class="p-4">
+    <div class="container">
+        <table class="table table-striped">
+        <tbody>
+            <tr *ngFor="let ticket of tickets">
+                <td> The task "{{ticket.ticketTitle}}" was created by user "{{ticket.userName}}" on "{{ticket.ticketCreationDate}}" for project Id "{{ticket.projectId}}"</td>
+            </tr>
+    <!-- </div> -->
+        <tr *ngIf="!tickets">
+            <td colspan="4" class="text-center">
+                <span class="spinner-border spinner-border-lg align-center">No Tickets Created</span>
+            </td>
+        </tr>
+    </tbody>
+        </table>
+    </div>
+</div>

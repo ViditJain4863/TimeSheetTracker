@@ -1,0 +1,55 @@
+.navbar{
+    background-color:black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-between;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .navbar img{
+    width:100px;
+    height: 100px;
+    left: 0%;
+  }
+  .navbar .banner{
+    width:400px;
+    height: 100px;
+  }
+  .multicolortext {
+    background-image: linear-gradient(to left, white,yellow,goldenrod);
+    -webkit-background-clip: text;
+    font-size: larger;
+    font-weight: bold;
+    color: transparent;
+    font-family: "Lucida Calligraphy"
+  }
+  
+  .multicolortextul {
+    display: inline;
+    background-image: linear-gradient(to left, white,yellow,goldenrod);
+    -webkit-background-clip: text;
+    font-size: larger;
+    font-weight: bold;
+    color: transparent;
+    font-family: "Lucida Calligraphy"
+  }
+  ul li{
+    display: inline;
+    list-style: none;
+    margin-right: 15px ;
+  
+  }
+  
+  ul li a{
+    text-decoration: none;
+  }
+  
+  
+  a:hover{
+    text-decoration: none;
+    background-color: goldenrod;
+  
+  }
+  

@@ -1,0 +1,47 @@
+ <style>
+        table {
+            border-collapse: collapse;
+            background: white;
+            color: black;
+        }
+          
+        th,
+        td {
+            font-weight: bold;
+        }
+      
+    
+    </style>
+<div class="p-4">
+    <div class="container">
+        <h2 align="center" style="color: orange;">
+            <span><a (click)="changeMonth('left')">&#10094;</a></span>
+            <span> {{monthDisplay}} - {{yearDisplay}} </span>
+            <span><a (click)="changeMonth('right')">&#10095;</a></span>
+        </h2>
+        <table bgcolor="lightgrey" align="center" cellspacing="55" cellpadding="55" class="calendar">   
+            <thead class="calendar-body">
+                <tr style="color: white; background: purple;">
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                </tr>
+            </thead>     
+            <tbody>
+                    <tr *ngFor="let x of daysList,let y=index">
+                        <td class="circle">{{daysList[y][0]}}</td>
+                        <td>{{daysList[y][1]}}</td>
+                        <td>{{daysList[y][2]}}</td>
+                        <td>{{daysList[y][3]}}</td>
+                        <td>{{daysList[y][4]}}</td>
+                        <td>{{daysList[y][5]}}</td>
+                        <td>{{daysList[y][6]}}</td>
+                    </tr>
+            </tbody>
+        </table>   
+    </div>
+</div>

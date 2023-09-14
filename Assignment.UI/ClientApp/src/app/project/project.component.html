@@ -1,0 +1,45 @@
+<div class="p-4">
+    <div class="container">
+        <h1>Project Lists</h1>
+        <a routerLink="add" class="btn btn-sm btn-success mb-2">Add New Project</a>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th >S.No</th>
+                    <th >Project Code</th>
+                    <th >Project Name</th>
+                    <th >Project Description</th>
+                    <th >Project Start</th>
+                    <th >Project End</th>
+                </tr>
+            </thead>
+
+    <tbody>
+        <!-- <div  > -->
+        <tr *ngFor="let project of projects">
+            
+                <!-- <td>{{projects|json}}</td> -->
+                <!-- <td><a routerLink="{{project.id}}">{{project.id}}</a></td> -->
+                <td><a [routerLink]="'/project/'+project.id">{{project.id}}</a></td>
+                <td>{{project.projectCode}}</td>
+                <td>{{project.projectName}}</td>
+                <td>{{project.projectDescription}}</td>
+                <td>{{project.projectStart}}</td>
+                <td>{{project.projectEnd}}</td>
+                <td>{{project.userName}}</td>
+                <td><a routerLink="edit/{{project.id}}" class="btn btn-sm btn-primary me-1">Edit</a></td>
+                <td><a href="#" (click)="onDelete(project.id)">Delete</a></td>
+           
+            
+            <!-- <td>Delete</td> -->
+        </tr>
+    <!-- </div> -->
+        <tr *ngIf="!projects">
+            <td colspan="4" class="text-center">
+                <span class="spinner-border spinner-border-lg align-center">No Projects</span>
+            </td>
+        </tr>
+    </tbody>
+        </table>
+    </div>
+</div>

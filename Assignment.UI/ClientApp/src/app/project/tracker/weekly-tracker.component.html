@@ -1,0 +1,47 @@
+<!-- <form [formGroup]="form"> -->
+    <div class="p-4">
+        <div class="col-sm-10" style="text-align:center;">
+            <label id="weekLbl" style="margin-left: 10%;">Week:- </label>
+            <select name="weekList" (change)="changeValue($event)" class="dropdown">
+                <option value="prevWeek">{{prev_first|date}} - {{prev_last|date}}</option>
+                <option selected value="currWeek">{{curr_first|date}} - {{curr_last|date}}</option>
+                <option value="nextWeek">{{next_first|date}} - {{next_last|date}}</option>
+            </select>
+        </div>
+        <div class="container">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Ticket Selection</th>
+                        <th>Place</th>
+                        <th>Description</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let day of getWeekDays(),let x = index">
+                        <td id="day{{x}}">{{day|date}}</td>
+                        <td>
+                            <select *ngFor="let ticket of tickets"><option> {{ticket.id}} || {{ticket.ticketTitle}} </option></select>
+                        </td>
+                        <td>
+                            <select name="place">
+                                <option value="WFH">WFH</option>
+                                <option value="office">Office</option>
+                                <option value="client">Client-Location</option>
+                                <option value="leave">Leave</option>
+                            </select>
+                        </td>
+                        <td><textarea  id="text{{x}}" rows="4" cols="50" ></textarea></td>
+                        <td>
+                            <a (click)="onSaveStatus()" class="btn btn-sm btn-primary me-1" id="save{{x}}">Save</a>
+                            <a (click)="onSubmitStatus()" class="btn btn-sm btn-primary me-1" id="save{{x}}">Submit</a>
+                            <a (click)="onReset(x)" class="btn btn-sm btn-primary me-1" id="save{{x}}">Reset</a>
+                        </td>
+                    <tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+<!-- </form> -->
